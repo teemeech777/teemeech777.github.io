@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кулінарний гід — кава та десерти</title>
+  <meta name="description" content="Навчальна HTML+CSS робота: кулінарний гід про каву та десерти.">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Невелике покращення вигляду посилань/кнопок без правок style.css -->
+  <style>
+    .link-more{ text-decoration:none; border-bottom:1px dashed currentColor; padding:0 2px; }
+    .link-more:hover,.link-more:focus{ border-bottom-style:solid; }
+    .navbtns{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+    .navbtns a{ text-decoration:none; }
+  </style>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand__icon">☕</span>
+      <span class="brand__title">Coffee Guide</span>
+    </div>
+
+    <nav class="menu" aria-label="Бокова навігація">
+      <a href="#intro">Вступ</a>
+      <a href="#coffee">Кава</a>
+      <a href="#desserts">Десерти</a>
+      <a href="#pairing">Поєднання</a>
+      <a href="#tips">Поради</a>
+      <a href="cappuccino.html">Капучино</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+
+    <p class="sidebar__note">
+      Навчальна HTML+CSS робота<br>
+      Студент: <strong>Стасенко Вадим</strong>
+    </p>
+  </aside>
+
+  <main id="main" class="content">
+    <header class="header" id="intro">
+      <h1>Кулінарний гід: кава та десерти</h1>
+      <p>
+        Легкий довідник для тих, хто хоче краще орієнтуватися у кавовому меню
+        та підбирати десерти до напоїв.
+      </p>
+    </header>
+
+    <section aria-labelledby="introTitle">
+      <h2 id="introTitle">Вступ</h2>
+      <p>
+        Кава — це не лише напій, а частина культури спілкування та відпочинку.
+        Правильно підібраний десерт допомагає розкрити смак кави і зробити
+        кавову паузу приємнішою.
+      </p>
+      <p>На цій сторінці зібрані базові знання для початківців.</p>
+    </section>
+
+    <section id="coffee">
+      <h2>Кава</h2>
+      <ul>
+        <li><strong>Еспресо</strong> — міцний концентрований напій.</li>
+        <li><strong>Американо</strong> — еспресо з додаванням гарячої води.</li>
+        <li>
+          <strong>Капучино</strong> — кава з молочною пінкою
+          (<a class="link-more" href="cappuccino.html">сторінка про капучіно</a>)
+        </li>
+        <li><strong>Лате</strong> — м’який напій з великою кількістю молока.</li>
+      </ul>
+
+      <div class="navbtns" aria-label="Швидкі переходи">
+        <a class="link-more" href="#pairing">Перейти до поєднань</a>
+        <a class="link-more" href="#contact">Перейти до контактів</a>
+      </div>
+    </section>
+
+    <!-- ВАЖЛИВО: тут НЕ додаємо <img>, щоб не було 2 картинок.
+         Картинку "справа від десертів" робить CSS для #desserts -->
+    <section id="desserts">
+      <h2>Десерти</h2>
+      <ol>
+        <li>Чізкейк</li>
+        <li>Тірамісу</li>
+        <li>Шоколадний фондан</li>
+        <li>Круасан</li>
+        <li>Медівник</li>
+      </ol>
+    </section>
+
+    <section id="pairing">
+      <h2>Поєднання</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Кава</th>
+            <th>Десерт</th>
+            <th>Коментар</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Еспресо</td>
+            <td>Шоколад</td>
+            <td>Підкреслює гірчинку</td>
+          </tr>
+          <tr>
+            <td>Капучино</td>
+            <td>Тірамісу</td>
+            <td>Гармонійне поєднання</td>
+          </tr>
+          <tr>
+            <td>Лате</td>
+            <td>Чізкейк</td>
+            <td>Ніжний смак</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="tips">
+      <h2>Поради</h2>
+      <ul>
+        <li>Починай з м’яких молочних напоїв.</li>
+        <li>Не поспішай — дай каві трохи охолонути.</li>
+        <li>Поєднуй солодке з міцною кавою.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Контакти</h2>
+
+      <p>
+        Автор сайту: <strong>Стасенко Вадим</strong><br>
+        Email: <a href="mailto:vadym.stasenko.web@gmail.com">vadym.stasenko.web@gmail.com</a>
+      </p>
+
+      <!-- Відправка БЕЗ Outlook: відкриває Gmail compose у браузері -->
+      <form id="contactForm" class="form" action="#" method="post">
+        <label for="name">Ім’я</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">Повідомлення</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Надіслати повідомлення</button>
+
+        <noscript>
+          <p>
+            JavaScript вимкнено. Тоді напишіть лист на
+            <a href="mailto:vadym.stasenko.web@gmail.com">vadym.stasenko.web@gmail.com</a>.
+          </p>
+        </noscript>
+      </form>
+    </section>
+
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var form = document.getElementById("contactForm");
+  var toEmail = "vadym.stasenko.web@gmail.com";
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Заповніть, будь ласка, усі поля.");
+      return;
+    }
+
+    var subject = "Повідомлення з сайту: Кулінарний гід (Стасенко Вадим)";
+    var body =
+      "Ім'я: " + name + "\n" +
+      "Email: " + email + "\n\n" +
+      "Повідомлення:\n" + message;
+
+    var gmailUrl =
+      "https://mail.google.com/mail/?view=cm&fs=1" +
+      "&to=" + encodeURIComponent(toEmail) +
+      "&su=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+  });
+})();
+</script>
+
+</body>
+</html>
